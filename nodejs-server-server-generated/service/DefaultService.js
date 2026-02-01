@@ -10,7 +10,7 @@ var utils = require('../utils/writer.js');
  * no response value expected for this operation
  **/
 exports.authorsAuthorIdDELETE = function() {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function(resolve, _) {
     resolve(utils.respondWithCode(204, {}));
   });
 }
@@ -23,7 +23,7 @@ exports.authorsAuthorIdDELETE = function() {
  * returns Author
  **/
 exports.authorsAuthorIdGET = function() {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function(resolve, _) {
     var examples = {};
     examples['application/json'] = {
   "name" : "name",
@@ -46,7 +46,7 @@ exports.authorsAuthorIdGET = function() {
  * returns Author
  **/
 exports.authorsAuthorIdPUT = function(_,__) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function(resolve, _) {
     var examples = {};
     examples['application/json'] = {
   "name" : "name",
@@ -91,7 +91,7 @@ exports.authorsGET = function() {
  * body AuthorInput 
  * returns Author
  **/
-exports.authorsPOST = function(body) {
+exports.authorsPOST = function() {
   return new Promise(function(resolve, _) {
     var examples = {};
     examples['application/json'] = {
@@ -233,7 +233,7 @@ exports.booksPOST = function() {
  * no response value expected for this operation
  **/
 exports.categoriesCategoryIdDELETE = function() {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function(resolve, _) {
     resolve(utils.respondWithCode(204, {}));
   });
 }
