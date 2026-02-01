@@ -95,14 +95,10 @@ exports.authorsPOST = function() {
   return new Promise(function(resolve, _) {
     var examples = {};
     examples['application/json'] = {
-  "name" : "name",
-  "id" : 0
-};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve(utils.respondWithCode(201, examples['application/json']));
-    }
+      "name" : "name",
+      "id" : 0
+    };
+    resolve(utils.respondWithCode(201, examples['application/json']));
   });
 }
 
@@ -211,17 +207,13 @@ exports.booksPOST = function() {
   return new Promise(function(resolve, _) {
     var examples = {};
     examples['application/json'] = {
-  "category_id" : 1,
-  "published_year" : 5,
-  "id" : 0,
-  "title" : "title",
-  "author_id" : 6
-};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve(utils.respondWithCode(201, examples['application/json']));
-    }
+      "category_id" : 1,
+      "published_year" : 5,
+      "id" : 0,
+      "title" : "title",
+      "author_id" : 6
+    };
+    resolve(utils.respondWithCode(201, examples['application/json']));
   });
 }
 
@@ -318,14 +310,10 @@ exports.categoriesPOST = function() {
   return new Promise(function(resolve, _) {
     var examples = {};
     examples['application/json'] = {
-  "name" : "name",
-  "id" : 0
-};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve(utils.respondWithCode(201, examples['application/json']));
-    }
+      "name" : "name",
+      "id" : 0
+    };
+    resolve(utils.respondWithCode(201, examples['application/json']));
   });
 }
 

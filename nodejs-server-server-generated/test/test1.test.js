@@ -60,8 +60,8 @@ test.before(async (t) => {
     t.is(statusCode, 204);                   // The status code should be 204
   });
 
-  test("DELETE /categories/:categoryId endpoint returns 20", async (t) => {
-    const { statusCode } = await t.context.got.post("categories/1");
+  test("DELETE /categories/:categoryId endpoint returns 204", async (t) => {
+    const { statusCode } = await t.context.got.delete("categories/1");
     t.is(statusCode, 204);                   // The status code should be 204
   });
 
@@ -93,4 +93,34 @@ test.before(async (t) => {
         }
     });
     t.is(statusCode, 201);                   // The status code should be 201
+  });
+
+   test("PUT /books/:bookId endpoint returns 200", async (t) => {
+    const {statusCode } = await t.context.got.put("books/1",{
+        json: {
+            title: "Book Title",
+            author_id: 1,
+            category_id: 1,
+            published_year: 2025
+        }
+    });
+    t.is(statusCode, 200);                   // The status code should be 200
+  });
+
+  test("PUT /authors/:authorId endpoint returns 200", async (t) => {
+    const {statusCode } = await t.context.got.put("authors/1",{
+        json: {
+            name: "Author"
+        }
+    });
+    t.is(statusCode, 200);                   // The status code should be 200
+  });
+
+  test("PUT /categories/:categoryId endpoint returns 200", async (t) => {
+    const {statusCode } = await t.context.got.put("categories/1",{
+        json: {
+            name: "Category"
+        }
+    });
+    t.is(statusCode, 200);                   // The status code should be 200
   });
