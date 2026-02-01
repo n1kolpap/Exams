@@ -1,3 +1,5 @@
+var utils = require('../utils/writer.js');
+
 'use strict';
 
 
@@ -7,9 +9,9 @@
  * authorId Long 
  * no response value expected for this operation
  **/
-exports.authorsAuthorIdDELETE = function() {
-  return new Promise(function(resolve, _) {
-    resolve();
+exports.authorsAuthorIdDELETE = function(authorId) {
+  return new Promise(function(resolve, reject) {
+    resolve(utils.respondWithCode(204, {}));
   });
 }
 
@@ -20,8 +22,8 @@ exports.authorsAuthorIdDELETE = function() {
  * authorId Long 
  * returns Author
  **/
-exports.authorsAuthorIdGET = function() {
-  return new Promise(function(resolve, _) {
+exports.authorsAuthorIdGET = function(authorId) {
+  return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
   "name" : "name",
@@ -43,8 +45,8 @@ exports.authorsAuthorIdGET = function() {
  * authorId Long 
  * returns Author
  **/
-exports.authorsAuthorIdPUT = function(__,___) {
-  return new Promise(function(resolve, _) {
+exports.authorsAuthorIdPUT = function(body,authorId) {
+  return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
   "name" : "name",
@@ -65,7 +67,7 @@ exports.authorsAuthorIdPUT = function(__,___) {
  * returns List
  **/
 exports.authorsGET = function() {
-  return new Promise(function(resolve, _) {
+  return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = [ {
   "name" : "name",
@@ -89,8 +91,8 @@ exports.authorsGET = function() {
  * body AuthorInput 
  * returns Author
  **/
-exports.authorsPOST = function(__) {
-  return new Promise(function(resolve, _) {
+exports.authorsPOST = function(body) {
+  return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
   "name" : "name",
@@ -99,7 +101,7 @@ exports.authorsPOST = function(__) {
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
-      resolve();
+      resolve(utils.respondWithCode(201, examples['application/json']));
     }
   });
 }
@@ -111,9 +113,9 @@ exports.authorsPOST = function(__) {
  * bookId Long 
  * no response value expected for this operation
  **/
-exports.booksBookIdDELETE = function() {
-  return new Promise(function(resolve, _) {
-    resolve();
+exports.booksBookIdDELETE = function(bookId) {
+  return new Promise(function(resolve, reject) {
+    resolve(utils.respondWithCode(204, {}));
   });
 }
 
@@ -124,8 +126,8 @@ exports.booksBookIdDELETE = function() {
  * bookId Long 
  * returns Book
  **/
-exports.booksBookIdGET = function() {
-  return new Promise(function(resolve, _) {
+exports.booksBookIdGET = function(bookId) {
+  return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
   "category_id" : 1,
@@ -150,8 +152,8 @@ exports.booksBookIdGET = function() {
  * bookId Long 
  * returns Book
  **/
-exports.booksBookIdPUT = function(__,___) {
-  return new Promise(function(resolve, _) {
+exports.booksBookIdPUT = function(body,bookId) {
+  return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
   "category_id" : 1,
@@ -175,7 +177,7 @@ exports.booksBookIdPUT = function(__,___) {
  * returns List
  **/
 exports.booksGET = function() {
-  return new Promise(function(resolve, _) {
+  return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = [ {
   "category_id" : 1,
@@ -205,8 +207,8 @@ exports.booksGET = function() {
  * body BookInput 
  * returns Book
  **/
-exports.booksPOST = function(__) {
-  return new Promise(function(resolve, _) {
+exports.booksPOST = function(body) {
+  return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
   "category_id" : 1,
@@ -218,7 +220,7 @@ exports.booksPOST = function(__) {
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
-      resolve();
+      resolve(utils.respondWithCode(201, examples['application/json']));
     }
   });
 }
@@ -230,9 +232,9 @@ exports.booksPOST = function(__) {
  * categoryId Long 
  * no response value expected for this operation
  **/
-exports.categoriesCategoryIdDELETE = function() {
-  return new Promise(function(resolve, _) {
-    resolve();
+exports.categoriesCategoryIdDELETE = function(categoryId) {
+  return new Promise(function(resolve, reject) {
+    resolve(utils.respondWithCode(204, {}));
   });
 }
 
@@ -243,8 +245,8 @@ exports.categoriesCategoryIdDELETE = function() {
  * categoryId Long 
  * returns Category
  **/
-exports.categoriesCategoryIdGET = function() {
-  return new Promise(function(resolve, _) {
+exports.categoriesCategoryIdGET = function(categoryId) {
+  return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
   "name" : "name",
@@ -266,8 +268,8 @@ exports.categoriesCategoryIdGET = function() {
  * categoryId Long 
  * returns Category
  **/
-exports.categoriesCategoryIdPUT = function(__,___) {
-  return new Promise(function(resolve, _) {
+exports.categoriesCategoryIdPUT = function(body,categoryId) {
+  return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
   "name" : "name",
@@ -288,7 +290,7 @@ exports.categoriesCategoryIdPUT = function(__,___) {
  * returns List
  **/
 exports.categoriesGET = function() {
-  return new Promise(function(resolve, _) {
+  return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = [ {
   "name" : "name",
@@ -312,8 +314,8 @@ exports.categoriesGET = function() {
  * body CategoryInput 
  * returns Category
  **/
-exports.categoriesPOST = function() {
-  return new Promise(function(resolve, _) {
+exports.categoriesPOST = function(body) {
+  return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
   "name" : "name",
@@ -322,7 +324,7 @@ exports.categoriesPOST = function() {
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
-      resolve();
+      resolve(utils.respondWithCode(201, examples['application/json']));
     }
   });
 }
